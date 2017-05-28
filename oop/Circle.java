@@ -5,21 +5,21 @@ public class Circle {
 
   //Constructors (overloaded) *observe identical name.
   public Circle() { //1st
-    radius = 1.0;
-    colour = "red";
+    this.radius = 1.0;
+    this.colour = "red";
   }
 
-  public Circle(double r) { //2nd
-    radius = r;
-    colour = "red";
+  public Circle(double radius) { //2nd
+    this.radius = radius;
+    this.colour = "red";
   }
 
-  public Circle(double r, String c) { //3rd
-    radius = r;
-    colour = c;
+  public Circle(double radius, String colour) { //3rd
+    this.radius = radius;
+    this.colour = colour;
   }
 
-  //Public methods
+  //Public methods : Getters
   public double getRadius() {
     return radius;
   }
@@ -30,6 +30,15 @@ public class Circle {
 
   public double getArea() {
     return radius * radius * Math.PI;
+  }
+
+  //Setters
+  public void setColour(String colour) {
+    this.colour = colour;
+  }
+
+  public void setRadius(double radius) {
+    this.radius = radius;
   }
 }
 
