@@ -14,6 +14,8 @@ public class TestTime {
 
     test.testStates(t2);
     test.testStates(t1);
+    t1.setSecond(62);
+    t1.setTime(88, 88, 88);
     t1.setSecond(58);
     t1.setMinute(59);
     t1.setHour(20);

@@ -29,13 +29,25 @@ public class Time {
 
   //setters
   public void setSecond(int second) {
-    this.second = second;
+    if (second >= 0 && second <= 59) {
+      this.second = second;
+    } else {
+      System.out.println("Invalid second.");
+    }
   }
   public void setMinute(int minute) {
-    this.minute = minute;
+    if (minute >= 0 && minute <= 59) {
+      this.minute = minute;
+    } else {
+      System.out.println("Invalid minute.");
+    }
   }
   public void setHour(int hour) {
-    this.hour = hour;
+    if (hour >= 0 && hour <= 23) {
+      this.hour = hour;
+    } else {
+      System.out.println("Invalid hour.");
+    }
   }
 
   //cascading operations method
@@ -59,9 +71,33 @@ public class Time {
   }
 
   public void setTime(int second, int minute, int hour) {
-    this.second = second;
-    this.minute = minute;
-    this.hour = hour;
+    boolean timeIsValid = true;
+    String errorMessage = "The following are invalid:\n";
+    if (second >= 0 && second <= 59) {
+      this.second = second;
+    } else {
+      errorMessage += "second\n";
+      timeIsValid = false;
+    }
+    if (minute >= 0 && minute <= 59) {
+      this.minute = minute;
+    } else {
+      errorMessage += "minute\n";
+      timeIsValid = false;
+    }
+    if (hour >= 0 && hour <= 23) {
+      this.hour = hour;
+    } else {
+      errorMessage += "hour\n";
+      timeIsValid = false;
+    }
+
+    if(timeIsValid == false) {
+      System.out.println(errorMessage);
+    } else {
+      System.out.println(this);
+    }
+
   }
 
   //toString() desc
