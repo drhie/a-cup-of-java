@@ -116,6 +116,29 @@ public class Checkpoint {
     System.out.println("Is " + word.toUpperCase() + " a palindromic word?: " + palindromic);
   }
 
+  public void gradesAverageArray() {
+    Scanner numStudentsIn = new Scanner(System.in);
+    System.out.print("Enter the no. of students: ");
+    int numStudents = numStudentsIn.nextInt();
+
+    int[] grades = new int[numStudents];
+    System.out.println("LENGTH: " + grades.length);
+    int sum = 0;
+    for (int i = 0; i < grades.length; i++) {
+      Scanner studentGrade = new Scanner(System.in);
+      System.out.print("Enter the grade for student " + (i+1) + ": ");
+      int scannedGrade = studentGrade.nextInt();
+
+      if (scannedGrade >= 0 && scannedGrade <= 100) {
+        grades[i] = scannedGrade;
+        sum += grades[i];
+      } else {
+        System.out.println("Invalid grade, try again...");
+      }
+    }
+    System.out.printf("The average is: %.2f%n", (double)sum/numStudents);
+  }
+
   public static void main(String []args) {
     Checkpoint exercise = new Checkpoint();
 
@@ -132,5 +155,9 @@ public class Checkpoint {
     exercise.reverseString();
     exercise.phoneKeyPad();
     exercise.testPalindromicWord();
+
+    //array exercises
+    exercise.gradesAverageArray();
+
   }
 }
