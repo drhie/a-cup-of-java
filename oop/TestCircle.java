@@ -14,6 +14,8 @@ public class TestCircle {
     Circle c1 = new Circle(2.0, "blue");
     Circle c2 = new Circle(2.0);
     Circle c3 = new Circle();
+    c3.setColour("green");
+    c2.setRadius(2.8);
     test.testStates(c1);
     ArrayList<Circle> circles = new ArrayList<Circle>();
     circles.add(c1);

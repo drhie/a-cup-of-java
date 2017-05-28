@@ -3,15 +3,19 @@ public class Circle {
   private double radius;
   private String colour;
 
+  //Public constants and must be initialized.
+  public static final double DEFAULT_RADIUS = 8.8;
+  public static final String DEFAULT_COLOUR = "red";
+
   //Constructors (overloaded) *observe identical name.
   public Circle() { //1st
-    this.radius = 1.0;
-    this.colour = "red";
+    this.radius = DEFAULT_RADIUS;
+    this.colour = DEFAULT_COLOUR;
   }
 
   public Circle(double radius) { //2nd
     this.radius = radius;
-    this.colour = "red";
+    this.colour = DEFAULT_COLOUR;
   }
 
   public Circle(double radius, String colour) { //3rd
@@ -21,11 +25,11 @@ public class Circle {
 
   //Public methods : Getters
   public double getRadius() {
-    return radius;
+    return this.radius;
   }
 
   public String getColour() {
-    return colour;
+    return this.colour;
   }
 
   public double getArea() {
