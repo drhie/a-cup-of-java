@@ -122,21 +122,43 @@ public class Checkpoint {
     int numStudents = numStudentsIn.nextInt();
 
     int[] grades = new int[numStudents];
-    System.out.println("LENGTH: " + grades.length);
     int sum = 0;
-    for (int i = 0; i < grades.length; i++) {
-      Scanner studentGrade = new Scanner(System.in);
-      System.out.print("Enter the grade for student " + (i+1) + ": ");
-      int scannedGrade = studentGrade.nextInt();
 
-      if (scannedGrade >= 0 && scannedGrade <= 100) {
-        grades[i] = scannedGrade;
-        sum += grades[i];
-      } else {
-        System.out.println("Invalid grade, try again...");
+    for (int i = 0; i < grades.length; i++) {
+      boolean done = false;
+      while (!done) {
+        Scanner studentGrade = new Scanner(System.in);
+        System.out.print("Enter the grade for student " + (i+1) + ": ");
+        int scannedGrade = studentGrade.nextInt(); //Make sure to store the scanned input into a variable.
+
+        if (scannedGrade >= 0 && scannedGrade <= 100) {
+          grades[i] = scannedGrade;
+          sum += grades[i];
+          done = true;
+        } else {
+          System.out.println("Invalid grade, try again...");
+        }
       }
     }
     System.out.printf("The average is: %.2f%n", (double)sum/numStudents);
+  }
+
+  public static boolean isOdd() {
+    boolean done = false;
+    boolean result = false; //This MUST be initialized!
+    int number;
+    while (!done) {
+      Scanner input = new Scanner(System.in);
+      System.out.print("Input a number: ");
+      number = input.nextInt();
+      if (number >= 0) {
+        done = true;
+      } else {
+        System.out.println("Invalid entry. Try again!");
+      }
+      result = number % 2 != 0;
+    }
+    return result;
   }
 
   public static void main(String []args) {
@@ -159,5 +181,7 @@ public class Checkpoint {
     //array exercises
     exercise.gradesAverageArray();
 
+    //method exercises
+    System.out.println(exercise.isOdd());
   }
 }
