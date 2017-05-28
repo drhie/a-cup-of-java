@@ -42,6 +42,7 @@ class Person {
 }
 
 class Socialite extends Person {
+  //Constructor *not inherited from Person
   Socialite(String name, Integer age, Integer intelligence) {
     super(name, age, intelligence);
   }
@@ -64,6 +65,7 @@ class Socialite extends Person {
 }
 
 class Worker extends Person {
+  //Constructor *not inherited from Person
   Worker(String name, Integer age, Integer intelligence) {
     super(name, age, intelligence);
   }
