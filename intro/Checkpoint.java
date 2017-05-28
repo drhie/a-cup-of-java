@@ -161,8 +161,52 @@ public class Checkpoint {
     return result;
   }
 
+  public static boolean hasEight(int number) {
+    boolean result = false;
+    String num = Integer.toString(number);
+    for(int i = 0; i < num.length(); i++) {
+      String chrctr = Character.toString(num.charAt(i));
+      if (chrctr.equals("8")) {
+        result = true;
+      }
+    }
+    return result;
+  }
+
+  public static void printArray(int[] array) {
+    for(int i = 0; i < array.length; i++) {
+      if (i == array.length-1) {
+        System.out.print(array[i] + "\n");
+      } else {
+        System.out.print(array[i] + ", ");
+      }
+    }
+  }
+
+  public static void printArray(double[] array) {
+    for(int i = 0; i < array.length; i++) {
+      if (i == array.length-1) {
+        System.out.print(array[i] + "\n");
+      } else {
+        System.out.print(array[i] + ", ");
+      }
+    }
+  }
+
+  public static boolean contains(int[] array, int key) {
+    boolean result = false;
+    for (int i = 0; i < array.length; i ++) {
+      if (array[i] == key) {
+        result = true;
+      }
+    }
+    return result;
+  }
+
   public static void main(String []args) {
     Checkpoint exercise = new Checkpoint();
+    int[] practiceIntArray = new int[] {1, 2, 3, 4, 5};
+    double[] practiceDblArray = new double[] {1.45, 6.2, 3, 8.99};
 
     //conditional exercises
     exercise.checkPassFail();
@@ -180,8 +224,12 @@ public class Checkpoint {
 
     //array exercises
     exercise.gradesAverageArray();
+    exercise.printArray(practiceIntArray);
+    exercise.printArray(practiceDblArray);
 
     //method exercises
     System.out.println(exercise.isOdd());
+    System.out.println(exercise.hasEight(2912));
+    System.out.println(exercise.contains(practiceIntArray, 2));
   }
 }
