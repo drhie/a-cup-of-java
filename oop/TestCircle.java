@@ -6,6 +6,7 @@ public class TestCircle {
     System.out.println("Radius: " + object.getRadius());
     System.out.println("Colour: " + object.getColour());
     System.out.printf("Area: %.2f%n", object.getArea());
+    System.out.println(object);
   }
 
   public static void main (String[] args) {

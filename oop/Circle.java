@@ -40,6 +40,11 @@ public class Circle {
   public void setRadius(double radius) {
     this.radius = radius;
   }
+
+  //Public method toString()
+  public String toString() {
+    return "Circle[radius=" + this.radius + ",colour=" + this.colour +"]";
+  }
 }
 
 //This is not a standalone program. Meant to be a building block, used in other programs.
