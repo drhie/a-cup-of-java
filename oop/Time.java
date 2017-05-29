@@ -32,21 +32,21 @@ public class Time {
     if (second >= 0 && second <= 59) {
       this.second = second;
     } else {
-      System.out.println("Invalid second.");
+      throw new IllegalArgumentException("Invalid second.");
     }
   }
   public void setMinute(int minute) {
     if (minute >= 0 && minute <= 59) {
       this.minute = minute;
     } else {
-      System.out.println("Invalid minute.");
+      throw new IllegalArgumentException("Invalid minute.");
     }
   }
   public void setHour(int hour) {
     if (hour >= 0 && hour <= 23) {
       this.hour = hour;
     } else {
-      System.out.println("Invalid hour.");
+      throw new IllegalArgumentException("Invalid hour.");
     }
   }
 
