@@ -71,33 +71,9 @@ public class Time {
   }
 
   public void setTime(int second, int minute, int hour) {
-    boolean timeIsValid = true;
-    String errorMessage = "The following are invalid:\n";
-    if (second >= 0 && second <= 59) {
-      this.second = second;
-    } else {
-      errorMessage += "second\n";
-      timeIsValid = false;
-    }
-    if (minute >= 0 && minute <= 59) {
-      this.minute = minute;
-    } else {
-      errorMessage += "minute\n";
-      timeIsValid = false;
-    }
-    if (hour >= 0 && hour <= 23) {
-      this.hour = hour;
-    } else {
-      errorMessage += "hour\n";
-      timeIsValid = false;
-    }
-
-    if(timeIsValid == false) {
-      System.out.println(errorMessage);
-    } else {
-      System.out.println(this);
-    }
-
+    this.setSecond(second);
+    this.setMinute(minute);
+    this.setHour(hour);
   }
 
   //toString() desc
