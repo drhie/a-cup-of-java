@@ -1,6 +1,4 @@
 public class Student extends Person {
-  private String name;
-  private String address;
   private int numCourses;
   private String[] courses;
   private int[] grades;
@@ -11,6 +9,10 @@ public class Student extends Person {
     numCourses = 0;
     courses = new String[MAX_COURSES];
     grades = new int[MAX_COURSES];
+  }
+
+  public int getNumCourses() {
+    return this.numCourses;
   }
 
   @Override
