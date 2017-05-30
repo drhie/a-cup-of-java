@@ -1,27 +1,21 @@
-public class Student {
+public class Student extends Person {
   private String name;
   private String address;
-  private int numCourses = 0;
-  private String[] courses = new String[30];
-  private int[] grades = new int[30];
+  private int numCourses;
+  private String[] courses;
+  private int[] grades;
+  private static final int MAX_COURSES = 30;
 
   public Student(String name, String address) {
-    this.name = name;
-    this.address = address;
+    super(name, address);
+    numCourses = 0;
+    courses = new String[MAX_COURSES];
+    grades = new int[MAX_COURSES];
   }
 
-  public String getName() {
-    return this.name;
-  }
-  public String getAddress() {
-    return this.address;
-  }
-  public void setAddress(String address) {
-    this.address = address;
-  }
-
+  @Override
   public String toString() {
-    return this.name + "(" + this.address + ")";
+    return "Student: " + super.toString();
   }
 
   public void addCourseGrade(String course, int grade) {
