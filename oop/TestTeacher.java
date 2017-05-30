@@ -21,7 +21,10 @@ public class TestTeacher {
 
     fred.addCourse("ROR404");
     daniel.addCourse("RCT200");
+    daniel.addCourse("RCT100");
     devon.addCourse("CSC200");
+    fred.addCourse("ROR404");
+    daniel.removeCourse("RCT200");
     for (Teacher teacher : teachers) {
       test.testStates(teacher);
       for (String courseName : courseCodes) {
