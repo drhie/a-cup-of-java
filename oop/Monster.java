@@ -1,4 +1,4 @@
-public class Monster {
+abstract public class Monster {
   private String name;
 
   public Monster(String name) {
@@ -9,7 +9,5 @@ public class Monster {
     return this.name;
   }
 
-  public String attack() {
-    return "I don't know how to attack!";
-  }
+  abstract public String attack();
 }
